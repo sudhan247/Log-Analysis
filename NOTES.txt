@@ -1,0 +1,98 @@
+Notes:
+Rename as lat and lon
+#######################
+#####  INGEST     #####
+#######################
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+{
+  "description": "Ingest pipeline created by file structure finder",
+  "processors": [
+    {
+      "date": {
+        "field": "Date",
+        "timezone": "{{ beat.timezone }}",
+        "formats": [
+          "ISO8601"
+        ]
+      }
+    },
+    {
+    "append" : {
+      "field" : "location",
+      "value" :["{{lat}},{{lon}}"]
+    }
+  }
+  ]
+}
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#######################
+#####  MAPPINGS   #####
+#######################
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+{
+  "@timestamp": {
+    "type": "date"
+  },
+  "Accession": {
+    "type": "keyword"
+  },
+  "Browser": {
+    "type": "keyword"
+  },
+  "CIK": {
+    "type": "double"
+  },
+  "Code": {
+    "type": "double"
+  },
+  "Country_Code": {
+    "type": "keyword"
+  },
+  "Country_Name": {
+    "type": "text"
+  },
+  "Crawler": {
+    "type": "double"
+  },
+  "Date": {
+    "type": "date",
+    "format": "iso8601"
+  },
+  "Extention": {
+    "type": "keyword"
+  },
+  "Find": {
+    "type": "double"
+  },
+  "IDX": {
+    "type": "double"
+  },
+  "IP": {
+    "type": "keyword"
+  },
+  "No_Agent": {
+    "type": "double"
+  },
+  "No_Refer": {
+    "type": "double"
+  },
+  "Size": {
+    "type": "double"
+  },
+  "Time": {
+    "type": "keyword"
+  },
+  "Zone": {
+    "type": "double"
+  },
+  "lat": {
+    "type": "float"
+  },
+  "lon": {
+    "type": "float"
+  },
+  "location" : {
+    "type": "geo_point"
+  }
+}
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
