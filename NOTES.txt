@@ -30,69 +30,81 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 #######################
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 {
-  "@timestamp": {
-    "type": "date"
-  },
-  "Accession": {
-    "type": "keyword"
-  },
-  "Browser": {
-    "type": "keyword"
-  },
-  "CIK": {
-    "type": "double"
-  },
-  "Code": {
-    "type": "double"
-  },
-  "Country_Code": {
-    "type": "keyword"
-  },
-  "Country_Name": {
-    "type": "text"
-  },
-  "Crawler": {
-    "type": "double"
-  },
-  "Date": {
-    "type": "date",
-    "format": "iso8601"
-  },
-  "Extention": {
-    "type": "keyword"
-  },
-  "Find": {
-    "type": "double"
-  },
-  "IDX": {
-    "type": "double"
-  },
-  "IP": {
-    "type": "keyword"
-  },
-  "No_Agent": {
-    "type": "double"
-  },
-  "No_Refer": {
-    "type": "double"
-  },
-  "Size": {
-    "type": "double"
-  },
-  "Time": {
-    "type": "keyword"
-  },
-  "Zone": {
-    "type": "double"
-  },
-  "lat": {
-    "type": "float"
-  },
-  "lon": {
-    "type": "float"
-  },
-  "location" : {
-    "type": "geo_point"
+  "mapping": {
+    "_doc": {
+      "_meta": {
+        "created_by": "ml-file-data-visualizer"
+      },
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "Accession": {
+          "type": "keyword"
+        },
+        "Browser": {
+          "type": "keyword"
+        },
+        "CIK": {
+          "type": "double"
+        },
+        "Code": {
+          "type": "double"
+        },
+        "Country_Code": {
+          "type": "keyword"
+        },
+        "Country_Name": {
+          "type": "keyword"
+        },
+        "Crawler": {
+          "type": "double"
+        },
+        "Date": {
+          "type": "date",
+          "format": "iso8601"
+        },
+        "Extention": {
+          "type": "keyword"
+        },
+        "Find": {
+          "type": "double"
+        },
+        "IDX": {
+          "type": "double"
+        },
+        "IP": {
+          "type": "keyword"
+        },
+        "No_Agent": {
+          "type": "double"
+        },
+        "No_Refer": {
+          "type": "double"
+        },
+        "OS": {
+          "type": "keyword"
+        },
+        "Size": {
+          "type": "double"
+        },
+        "Time": {
+          "type": "keyword"
+        },
+        "Zone": {
+          "type": "double"
+        },
+        "lat": {
+          "type": "float"
+        },
+        "location": {
+          "type": "geo_point"
+        },
+        "lon": {
+          "type": "float"
+        }
+      }
+    }
   }
 }
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
